@@ -7,6 +7,7 @@ public class WindCompass : MonoBehaviour
     public RectTransform compassNeedle;
     public float maxOffset = 10f; // Maximum offset to adjust the arrow's position
     public float rotationSpeed = 5f; // Adjust the rotation speed as needed
+    public float rotation = 90f;
 
     private float previousWindAngle = 0f;
 
@@ -15,7 +16,7 @@ public class WindCompass : MonoBehaviour
         // Set the default wind direction if windScript is not assigned
         if (windScript == null)
         {
-            Quaternion defaultRotation = Quaternion.Euler(0f, 0f, 90f);
+            Quaternion defaultRotation = Quaternion.Euler(0f, 0f, rotation);
             compassNeedle.rotation = defaultRotation;
         }
     }
