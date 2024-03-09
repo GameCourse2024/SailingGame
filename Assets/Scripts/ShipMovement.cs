@@ -27,6 +27,8 @@ public class ShipMovement : MonoBehaviour
     [Tooltip("Key for turning the ship right")]
     [SerializeField]
     private KeyCode rightKey = KeyCode.D;
+    
+    [SerializeField] private float rotation = 1f;
    
    
     private Rigidbody rb;
@@ -49,11 +51,11 @@ void HandleMovementInput()
 
         if (Input.GetKey(leftKey))
         {
-            rotationInput = -1f;
+            rotationInput = rotation;
         }
         else if (Input.GetKey(rightKey))
         {
-            rotationInput = 1f;
+            rotationInput = -rotation;
         }
 
         float rotationAmount = rotationInput * rotationSpeed;
